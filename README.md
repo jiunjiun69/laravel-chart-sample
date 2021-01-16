@@ -41,3 +41,10 @@ cmd中輸入composer，出現此畫面代表成功
 ```
 composer global require laravel/installer
 ```
+
+### 建立 Larvel 專案，用Composer 下載了 Laravel 安裝套件，可以利用這個安裝套件輕易的建立好 Laravel 專案，cmd輸入
+```
+~~laravel new blog~~
+composer create-project --prefer-dist laravel/laravel blog 7.30.*
+```
+blog為你的專案名稱
