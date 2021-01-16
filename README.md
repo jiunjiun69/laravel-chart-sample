@@ -259,3 +259,7 @@ Route::get('/chartEventStream', 'HomeController@chartEventStream')->name('chartE
         };
 </script>
 ```
+
+![alt laravel-7](/img/laravel-7.png "laravel-7")
+
+之後在瀏覽器按F12，切換到Console，如果出現了上圖中推送的console log就是SSE串接前端成功了
