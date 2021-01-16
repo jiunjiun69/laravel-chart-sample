@@ -13,5 +13,5 @@ laravel chart sample,use xampp and chartjs
 
 ### 安裝XAMPP
 https://www.apachefriends.org/zh_tw/download.html
-![alt 活動力計算概念圖](/img/fish_power.PNG "活動力計算概念圖")
+![alt XAMPP](/img/XAMPP.PNG "XAMPP")
 請先下載並安裝XAMPP
