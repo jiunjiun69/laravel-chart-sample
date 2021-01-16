@@ -23,4 +23,4 @@ https://www.apachefriends.org/zh_tw/download.html
 
 https://getcomposer.org/
 ![alt composer](/img/composer.png "composer")
-![alt composer-1](/img/composer-1.png "composer-1")
+![alt composer-1](/img/composer-2.png "composer-2")
