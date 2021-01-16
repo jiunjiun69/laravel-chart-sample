@@ -58,3 +58,13 @@ php artisan serve
 ![alt laravel](/img/laravel.png "laravel")
 
 在瀏覽器中輸入http://127.0.0.1:8000 ，能看到以上畫面代表運行成功
+
+### ~~生成註冊登入頁面~~
+
+~~composer require laravel/ui "^2.0"~~
+
+~~php artisan ui vue --auth~~
+
+~~這樣就構建好使用者登入註冊介面了
+介面在resources\views\auth下
+註冊登入控制器在app\Http\Controllers\Auth下~~
