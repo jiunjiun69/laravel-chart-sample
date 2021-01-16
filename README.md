@@ -138,3 +138,17 @@ php artisan migrate
 <a href="{{ url('/chart') }}">Chart</a>
 ```
   
+開啟sample\app\Http\Controllers中的HomeController.php，加入以下function並儲存
+```
+public function chart()
+{
+    return view('chart');
+}
+```
+
+開啟sample\routes中的web.php
+
+在下方加入以下路由
+```
+Route::get('/chart', 'HomeController@chart')->name('chart');
+```
