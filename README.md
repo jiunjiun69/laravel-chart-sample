@@ -266,4 +266,15 @@ Route::get('/chartEventStream', 'HomeController@chartEventStream')->name('chartE
 
 ## 第五步-串接Chart.js圖表
 
-參考資料 [Chart.js](https://www.chartjs.org/)
+參考資料： [Chart.js](https://www.chartjs.org/)
+
+### 在chart.blade.php加入引用此[Chart.js](https://cdnjs.com/libraries/Chart.js)圖表
+
+```
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.css"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css"></script>
+```
