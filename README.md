@@ -3,7 +3,7 @@ laravel chart sample,use xampp and chartjs
 
 透過[Server Sent Events](https://en.wikipedia.org/wiki/Server-sent_events) 將XAMPP架設的MySQL資料庫中的數據推送到chart顯示的實作過程教學
 
-此專案是依老師要求，要教學弟妹們laravel串接資料庫與圖表的教學，如有錯誤請鞭打小力點，有其他問題都可以提問或指正，感謝大家
+此專案是依老師要求，要教學弟妹們laravel串接資料庫與圖表的教學，如有錯誤請鞭小力點，有其他問題都歡迎提問或指正，感謝大家
 
 ## Requirements
 
