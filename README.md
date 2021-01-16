@@ -87,6 +87,8 @@ DB_PASSWORD=
 ```
 這邊是mysql的設定，請先開啟XAMPP
 
+![alt xampp-2](/img/xampp-2.png "xampp-2")
+
 ### 資料庫遷移
 
 php artisan migrate
