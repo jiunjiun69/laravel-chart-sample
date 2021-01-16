@@ -37,8 +37,8 @@ cmd中輸入composer，出現此畫面代表成功
 
 ## 第二步-建立及運行Larvel 專案
 
-### ~~利用 Composer 下載 Laravel 安裝器，開啟cmd輸入
-composer global require laravel/installer
+### ~~利用 Composer 下載 Laravel 安裝器，開啟cmd輸入~~
+~~composer global require laravel/installer
 laravel new blog~~
 
 
