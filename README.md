@@ -224,7 +224,7 @@ public function chartEventStream()
         'time' => date('Y-m-d H:i:s', $t),
         
         // 取值
-        $value = DB::table('chart')->orderBy('time', 'desc')->limit(1)->value('value')
+        'value' => DB::table('chart')->orderBy('time', 'desc')->limit(1)->value('value')
     ];
 
     $response = new StreamedResponse();
@@ -268,7 +268,7 @@ Route::get('/chartEventStream', 'HomeController@chartEventStream')->name('chartE
 
 參考資料： [Chart.js](https://www.chartjs.org/)
 
-### 在chart.blade.php加入引用此[Chart.js](https://cdnjs.com/libraries/Chart.js)圖表
+### 在chart.blade.php加入script引用此[Chart.js](https://cdnjs.com/libraries/Chart.js)圖表
 
 ```
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
@@ -278,3 +278,73 @@ Route::get('/chartEventStream', 'HomeController@chartEventStream')->name('chartE
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css"></script>
 ```
+將以下code
+```
+<div>
+    {{ $value }}
+</div>
+```
+替換為以下，增加一個canvas用以顯示圖表
+```
+<div>
+    <canvas id="myChart" width="600" height="600"></canvas>
+</div>
+```
+
+將以下code增加宣告Chart.js的內容
+```
+<script>
+    let evtSource = new EventSource("/chartEventStream", {withCredentials: true});
+        evtSource.onmessage = function (e) {
+            let serverData = JSON.parse(e.data);
+            console.log('EventData:- ', serverData);
+        };
+</script>
+```
+增加為
+```
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        datasets: [{
+            label: '圖表',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: '時間軸'
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: '值'
+                        }
+                    }]
+        }
+    }
+});
+
+let evtSource = new EventSource("/chartEventStream", {withCredentials: true});
+    evtSource.onmessage = function (e) {
+        let serverData = JSON.parse(e.data);
+        console.log('EventData:- ', serverData);
+
+        myChart.data.labels.push(serverData.time);
+        myChart.data.datasets[0].data.push(serverData.value);
+        myChart.update();
+    };
+</script>
+```
+
+更改完後儲存並執行專案，在 http://127.0.0.1:8000/chart 如果能夠顯示以下圖表就是成功了!!!
+
+![alt laravel-8](/img/laravel-8.png "laravel-8")
