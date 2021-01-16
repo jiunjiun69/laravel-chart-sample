@@ -5,6 +5,7 @@ laravel chart sample,use xampp and chartjs
 
 
 ## Requirements
+
 - [XAMPP](https://www.apachefriends.org/zh_tw/download.html)
 - [Composer](https://getcomposer.org/)
 - [Laravel 7.x](https://laravel.com/docs/7.x/installation)
@@ -12,6 +13,8 @@ laravel chart sample,use xampp and chartjs
 ## 第一步-環境安裝
 
 ### 安裝XAMPP
+
 https://www.apachefriends.org/zh_tw/download.html
 ![alt xampp](/img/xampp.png "xampp")
+
 請先下載並安裝XAMPP
