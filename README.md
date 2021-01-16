@@ -118,6 +118,7 @@ php artisan migrate
 
 ### 資料庫取值
 
+
 開啟sample\resources\views中的welcome.blade.php
 
 找到以下此行
@@ -152,3 +153,5 @@ public function chart()
 ```
 Route::get('/chart', 'HomeController@chart')->name('chart');
 ```
+
+在sample\resources\views中新增chart.blade.php
