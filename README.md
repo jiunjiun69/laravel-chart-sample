@@ -118,6 +118,15 @@ php artisan migrate
 
 ### 資料庫取值
 
+![alt xampp-4](/img/xampp-4.png "xampp-4")
+
+![alt xampp-5](/img/xampp-5.png "xampp-5")
+
+![alt xampp-6](/img/xampp-6.png "xampp-6")
+
+請先建立一個chart資料表，並照著上圖所示加入三個欄位，最後再新增一個值
+
+
 
 開啟sample\resources\views中的welcome.blade.php
 
