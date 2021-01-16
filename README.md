@@ -133,7 +133,7 @@ php artisan migrate
     <a href="https://github.com/laravel/laravel">GitHub</a>
 </div>
 ```
-在<div>中多加一個連結並儲存
+在div中多加一個連結並儲存
 ```
 <a href="{{ url('/chart') }}">Chart</a>
 ```
