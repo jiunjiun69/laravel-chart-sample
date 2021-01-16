@@ -57,4 +57,4 @@ php artisan serve
 ```
 ![alt laravel](/img/laravel.png "laravel")
 
-在瀏覽器中輸入http://127.0.0.1:8000 ，能看到以上畫面代表成功
+在瀏覽器中輸入http://127.0.0.1:8000 ，能看到以上畫面代表運行成功
