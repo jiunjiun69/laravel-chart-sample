@@ -79,7 +79,7 @@ php artisan serve
 
 將上圖中紅色圈圈的部分Start，並點開藍色圈圈Admin進入phpmyadmin中
 
-![alt laravel-2](/img/laravel-3.png "xampp-3")
+![alt xampp-3](/img/xampp-3.png "xampp-3")
 
 首先，請建立一個帳號密碼，本教學帳號設定為sample，密碼為123456
 
