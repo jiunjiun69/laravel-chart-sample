@@ -22,3 +22,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/chart', 'HomeController@chart')->name('chart');
+
+Route::get('/chartEventStream', 'HomeController@chartEventStream')->name('chartEventStream');

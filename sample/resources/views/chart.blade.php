@@ -89,5 +89,13 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            let evtSource = new EventSource("/chartEventStream", {withCredentials: true});
+                evtSource.onmessage = function (e) {
+                    let serverData = JSON.parse(e.data);
+                    console.log('EventData:- ', serverData);
+                };
+        </script>
     </body>
 </html>
