@@ -28,7 +28,11 @@ https://getcomposer.org/
 ![alt composer-1](/img/composer-2.png "composer-2")
 
 ![alt composer](/img/composer-3.png "composer-3")
+
 下載完成後，請選擇安裝路徑為xampp中的php底下，並將添加至環境變數打勾
 
 ![alt composer-1](/img/composer-4.png "composer-4")
+
 cmd中輸入composer，出現此畫面代表成功
+
+
