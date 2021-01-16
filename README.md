@@ -204,7 +204,7 @@ Route::get('/chart', 'HomeController@chart')->name('chart');
 
 ![alt laravel-6](/img/laravel-6.png "laravel-6")
 
-## 第四步-加入Server Sent Event並串接chart
+## 第四步-加入Server Sent Event(SSE)伺服器推送事件
 
 ### 在HomeController加入Server Sent Event的function
 
@@ -263,3 +263,7 @@ Route::get('/chartEventStream', 'HomeController@chartEventStream')->name('chartE
 ![alt laravel-7](/img/laravel-7.png "laravel-7")
 
 之後在瀏覽器按F12，切換到Console，如果出現了上圖中推送的console log就是SSE串接前端成功了
+
+## 第五步-串接Chart.js圖表
+
+參考資料 [Chart.js](https://www.chartjs.org/)
