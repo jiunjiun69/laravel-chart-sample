@@ -10,6 +10,13 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
 
         <!-- Styles -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.css"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css"></script>
+
         <style>
             html, body {
                 background-color: #fff;
@@ -62,6 +69,7 @@
                 margin-bottom: 30px;
             }
         </style>
+        
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -85,17 +93,50 @@
                 </div>
 
                 <div>
-                    {{ $value }}
+                    <canvas id="myChart" width="600" height="600"></canvas>
                 </div>
             </div>
         </div>
 
         <script>
-            let evtSource = new EventSource("/chartEventStream", {withCredentials: true});
-                evtSource.onmessage = function (e) {
-                    let serverData = JSON.parse(e.data);
-                    console.log('EventData:- ', serverData);
-                };
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                datasets: [{
+                    label: '圖表',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                                display: true,
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: '時間軸'
+                                }
+                            }],
+                            yAxes: [{
+                                display: true,
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: '值'
+                                }
+                            }]
+                }
+            }
+        });
+
+        let evtSource = new EventSource("/chartEventStream", {withCredentials: true});
+            evtSource.onmessage = function (e) {
+                let serverData = JSON.parse(e.data);
+                console.log('EventData:- ', serverData);
+
+                myChart.data.labels.push(serverData.time);
+                myChart.data.datasets[0].data.push(serverData.value);
+                myChart.update();
+            };
         </script>
     </body>
 </html>
