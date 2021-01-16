@@ -199,6 +199,6 @@ Route::get('/chart', 'HomeController@chart')->name('chart');
 </div>
 ```
 
-#### 更改完之後全部儲存完，到專案根目錄下 php artisan serve 啟動，在 http://127.0.0.1:8000/chart 中如果能看到以下資料庫中value的值就是成功了
+#### 更改完之後全部儲存完，到專案根目錄下用cmd下 php artisan serve 啟動網頁伺服器，在 http://127.0.0.1:8000/chart 中如果能看到以下資料庫中value的值就是成功了
 
 ![alt laravel-6](/img/laravel-6.png "laravel-6")
