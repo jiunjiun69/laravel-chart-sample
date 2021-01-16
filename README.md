@@ -111,3 +111,7 @@ DB_PASSWORD=
 ```
 php artisan migrate
 ```
+![alt laravel-4](/img/laravel-4.png "laravel-4")
+![alt laravel-5](/img/laravel-5.png "laravel-5")
+
+看到以上內容代表遷移成功
