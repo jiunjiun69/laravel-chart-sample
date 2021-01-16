@@ -79,9 +79,11 @@ php artisan serve
 
 將上圖中紅色圈圈的部分Start，並點開藍色圈圈Admin進入phpmyadmin中
 
+![alt laravel-2](/img/laravel-2.png "laravel-2")
 
+接著建立一個名為laravel的資料庫
 
-接著打開laravel專案根目錄中的.env檔，這邊本人偏好用visual studio code，也可用notepad++或電腦內建的記事本都行
+再來打開laravel專案根目錄中的.env檔，這邊本人偏好用visual studio code，也可用notepad++或電腦內建的記事本都行
 
 找到以下這幾行
 
