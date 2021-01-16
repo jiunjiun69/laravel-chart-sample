@@ -128,7 +128,7 @@ php artisan migrate
 
 #### 新增完後換到laravel專案中
 
-開啟sample\resources\views中的welcome.blade.php
+#### 開啟sample\resources\views中的welcome.blade.php
 
 找到以下此行
 ```
@@ -148,19 +148,29 @@ php artisan migrate
 <a href="{{ url('/chart') }}">Chart</a>
 ```
   
-開啟sample\app\Http\Controllers中的HomeController.php，加入以下function並儲存
+#### 開啟sample\app\Http\Controllers中的HomeController.php，在最上方加入use DB，並加入以下function儲存
+```
+use DB;
+```
 ```
 public function chart()
 {
-    return view('chart');
+    // 連線到資料庫
+    DB::connection('mysql');
+
+    // 取值
+    $value = DB::table('laravel')->orderBy('time', 'desc')->limit(1)->value('value');
+        
+    return view('chart')->with('value',$value);
 }
 ```
 
-開啟sample\routes中的web.php
+#### 開啟sample\routes中的web.php
 
 在下方加入以下路由
 ```
 Route::get('/chart', 'HomeController@chart')->name('chart');
 ```
 
-在sample\resources\views中新增chart.blade.php
+#### 在sample\resources\views中新增chart.blade.php
+
