@@ -77,7 +77,7 @@ php artisan serve
 
 ![alt xampp-2](/img/xampp-2.png "xampp-2")
 
-將上圖中紅色圈圈的部分Start打開，並點開藍色圈圈的Admin進入phpmyadmin中
+將上圖中紅色圈圈的部分Start，並點開藍色圈圈Admin進入phpmyadmin中
 
 
 
