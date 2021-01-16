@@ -208,6 +208,11 @@ Route::get('/chart', 'HomeController@chart')->name('chart');
 
 ### 在HomeController加入Server Sent Event的function
 
+先在最上方加入use Symfony\Component\HttpFoundation\StreamedResponse
+```
+use Symfony\Component\HttpFoundation\StreamedResponse;
+```
+
 ```
 public function chartEventStream()
     {
@@ -236,12 +241,21 @@ public function chartEventStream()
     $response->send();
 }
 ```
-在最上方加入use Symfony\Component\HttpFoundation\StreamedResponse
-```
-use Symfony\Component\HttpFoundation\StreamedResponse;
-```
+
 ### 在web.php加入chartEventStream的路由
 
 ```
 Route::get('/chartEventStream', 'HomeController@chartEventStream')->name('chartEventStream');
+```
+
+### 在chart.blade.php加入接收chartEventStream值的script
+
+```
+<script>
+    let evtSource = new EventSource("/chartEventStream", {withCredentials: true});
+        evtSource.onmessage = function (e) {
+            let serverData = JSON.parse(e.data);
+            console.log('EventData:- ', serverData);
+        };
+</script>
 ```
