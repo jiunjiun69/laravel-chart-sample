@@ -115,3 +115,26 @@ php artisan migrate
 ![alt laravel-5](/img/laravel-5.png "laravel-5")
 
 看到以上內容代表遷移成功
+
+### 資料庫取值
+
+開啟sample\resources\views中的welcome.blade.php
+
+找到以下此行
+```
+<div class="links">
+    <a href="https://laravel.com/docs">Docs</a>
+    <a href="https://laracasts.com">Laracasts</a>
+    <a href="https://laravel-news.com">News</a>
+    <a href="https://blog.laravel.com">Blog</a>
+    <a href="https://nova.laravel.com">Nova</a>
+    <a href="https://forge.laravel.com">Forge</a>
+    <a href="https://vapor.laravel.com">Vapor</a>
+    <a href="https://github.com/laravel/laravel">GitHub</a>
+</div>
+```
+在<div>中多加一個連結並儲存
+```
+<a href="{{ url('/chart') }}">Chart</a>
+```
+  
