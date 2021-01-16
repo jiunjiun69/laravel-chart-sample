@@ -103,8 +103,11 @@ DB_PASSWORD=
 
 ![alt laravel-3](/img/laravel-3.png "laravel-3")
 
-請將DB_USERNAME 及 DB_PASSWORD 更改為自己設定的使用者帳號及密碼
+請將DB_USERNAME 及 DB_PASSWORD 更改為自己設定的使用者帳號及密碼並儲存
 
 ### 資料庫遷移
 
+使用以下指令進行資料庫遷移
+```
 php artisan migrate
+```
