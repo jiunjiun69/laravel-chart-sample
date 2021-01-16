@@ -85,7 +85,7 @@
                 </div>
 
                 <div>
-                    sss
+                    {{ $value }}
                 </div>
             </div>
         </div>

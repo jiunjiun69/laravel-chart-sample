@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class HomeController extends Controller
 {
@@ -28,6 +29,12 @@ class HomeController extends Controller
 
     public function chart()
     {
-        return view('chart');
+        // 連線到資料庫
+        DB::connection('mysql');
+
+        // 取值
+        $value = DB::table('chart')->orderBy('time', 'desc')->limit(1)->value('value');
+        
+        return view('chart')->with('value',$value);
     }
 }
