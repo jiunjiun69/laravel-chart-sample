@@ -49,3 +49,12 @@ cmd中輸入composer，出現此畫面代表成功
 composer create-project --prefer-dist laravel/laravel blog 7.30.*
 ```
 blog為你的專案名稱
+
+### 開啟開發環境網頁伺服器，此命令將在http://127.0.0.1:8000啟動開發服務器，cmd輸入
+```
+cd blog
+php artisan serve
+```
+![alt laravel](/img/laravel.png "laravel")
+
+在瀏覽器中輸入http://127.0.0.1:8000，能看到以上畫面代表成功
