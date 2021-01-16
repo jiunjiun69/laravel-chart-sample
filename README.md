@@ -65,6 +65,28 @@ php artisan serve
 
 ~~php artisan ui vue --auth~~
 
-~~這樣就構建好使用者登入註冊介面了
-介面在resources\views\auth下
-註冊登入控制器在app\Http\Controllers\Auth下~~
+~~這樣就構建好使用者登入註冊介面了~~
+
+~~介面在resources\views\auth下~~
+
+~~註冊登入控制器在app\Http\Controllers\Auth下~~
+
+## 第三步-資料庫串接與取值
+
+首先，打開laravel專案根目錄中的.env檔，這邊本人偏好用visual studio code，也可用notepad++或電腦本身的記事本都行
+
+找到以下這幾行
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=
+```
+這邊是mysql的設定，請先開啟XAMPP
+
+### 資料庫遷移
+
+php artisan migrate
