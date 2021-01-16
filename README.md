@@ -17,4 +17,10 @@ laravel chart sample,use xampp and chartjs
 https://www.apachefriends.org/zh_tw/download.html
 ![alt xampp](/img/xampp.png "xampp")
 
-請先下載並安裝XAMPP
+請先下載並安裝XAMPP，下載完成後下一步直到完成即可
+
+### 安裝Composer
+
+https://getcomposer.org/
+![alt composer](/img/composer.png "composer")
+![alt composer-1](/img/composer-1.png "composer-1")
