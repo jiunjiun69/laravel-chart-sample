@@ -13,5 +13,5 @@ laravel chart sample,use xampp and chartjs
 
 ### 安裝XAMPP
 https://www.apachefriends.org/zh_tw/download.html
-![alt XAMPP](/img/XAMPP.PNG "XAMPP")
+![alt xampp](/img/xampp.png "xampp")
 請先下載並安裝XAMPP
