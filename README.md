@@ -200,6 +200,48 @@ Route::get('/chart', 'HomeController@chart')->name('chart');
 </div>
 ```
 
-#### 更改完之後全部儲存完，到專案根目錄下用cmd下 php artisan serve 啟動網頁伺服器，在 http://127.0.0.1:8000/chart 中如果能看到以下資料庫中value的值就是成功了
+#### 更改完之後全部儲存好，到專案根目錄下用cmd下 php artisan serve 啟動網頁伺服器，在 http://127.0.0.1:8000/chart 中如果能看到以下資料庫中value的值就是資料庫串接成功了
 
 ![alt laravel-6](/img/laravel-6.png "laravel-6")
+
+## 第四步-加入Server Sent Event並串接chart
+
+### 在HomeController加入Server Sent Event的function
+
+```
+public function chartEventStream()
+    {
+    // 連線到資料庫
+    DB::connection('mysql');
+
+    $data = [
+        $t = strtotime('+8 hours'),
+        'time' => date('Y-m-d H:i:s', $t),
+        
+        // 取值
+        $value = DB::table('chart')->orderBy('time', 'desc')->limit(1)->value('value')
+    ];
+
+    $response = new StreamedResponse();
+    $response->setCallback(function () use ($data){
+         echo 'data: ' . json_encode($data) . "\n\n";
+         echo "retry: 1000\n";
+         ob_flush();
+         flush();
+    });
+
+    $response->headers->set('Content-Type', 'text/event-stream');
+    $response->headers->set('X-Accel-Buffering', 'no');
+    $response->headers->set('Cach-Control', 'no-cache');
+    $response->send();
+}
+```
+在最上方加入use Symfony\Component\HttpFoundation\StreamedResponse
+```
+use Symfony\Component\HttpFoundation\StreamedResponse;
+```
+### 在web.php加入chartEventStream的路由
+
+```
+Route::get('/chartEventStream', 'HomeController@chartEventStream')->name('chartEventStream');
+```
