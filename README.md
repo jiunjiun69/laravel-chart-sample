@@ -101,7 +101,7 @@ DB_PASSWORD=
 ```
 這邊是mysql的設定，其中laravel就是對應到剛剛在phpmyadmin中建立的laravel資料庫
 
-![alt laravel-3](/img/laravel-2.png "laravel-3")
+![alt laravel-3](/img/laravel-3.png "laravel-3")
 
 請將DB_USERNAME 及 DB_PASSWORD 更改為自己設定的使用者帳號及密碼
 
