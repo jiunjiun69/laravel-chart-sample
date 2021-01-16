@@ -73,7 +73,15 @@ php artisan serve
 
 ## 第三步-資料庫串接與取值
 
-首先，打開laravel專案根目錄中的.env檔，這邊本人偏好用visual studio code，也可用notepad++或電腦本身的記事本都行
+請先開啟XAMPP
+
+![alt xampp-2](/img/xampp-2.png "xampp-2")
+
+將上圖中紅色圈圈的部分Start打開，並點開藍色圈圈的Admin進入phpmyadmin中
+
+
+
+接著打開laravel專案根目錄中的.env檔，這邊本人偏好用visual studio code，也可用notepad++或電腦內建的記事本都行
 
 找到以下這幾行
 
@@ -85,9 +93,7 @@ DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=
 ```
-這邊是mysql的設定，請先開啟XAMPP
-
-![alt xampp-2](/img/xampp-2.png "xampp-2")
+這邊是mysql的設定
 
 ### 資料庫遷移
 
