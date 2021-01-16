@@ -174,3 +174,31 @@ Route::get('/chart', 'HomeController@chart')->name('chart');
 
 #### 在sample\resources\views中新增chart.blade.php
 
+這邊仿照welcome.blade.php的內容貼過來，把div class="links"的部分替換掉
+
+貼過來後請把以下code
+'''
+<div class="links">
+     <a href="https://laravel.com/docs">Docs</a>
+     <a href="https://laracasts.com">Laracasts</a>
+     <a href="https://laravel-news.com">News</a>
+     <a href="https://blog.laravel.com">Blog</a>
+     <a href="https://nova.laravel.com">Nova</a>
+     <a href="https://forge.laravel.com">Forge</a>
+     <a href="https://vapor.laravel.com">Vapor</a>
+     <a href="https://github.com/laravel/laravel">GitHub</a>
+     <a href="{{ url('/chart') }}">Chart</a>
+</div>
+'''
+
+替換為以下code
+
+'''
+<div>
+    {{ $value }}
+</div>
+'''
+
+#### 更改完之後全部儲存完，到專案根目錄下 php artisan serve 啟動，在 http://127.0.0.1:8000/chart 中如果能看到以下資料庫中value的值就是成功了
+
+![alt laravel-6](/img/laravel-6.png "laravel-6")
