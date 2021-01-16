@@ -79,6 +79,10 @@ php artisan serve
 
 將上圖中紅色圈圈的部分Start，並點開藍色圈圈Admin進入phpmyadmin中
 
+![alt laravel-2](/img/laravel-3.png "laravel-3")
+
+首先，請建立一個帳號密碼，本教學帳號設定為sample，密碼為123456
+
 ![alt laravel-2](/img/laravel-2.png "laravel-2")
 
 接著建立一個名為laravel的資料庫
@@ -95,7 +99,11 @@ DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=
 ```
-這邊是mysql的設定
+這邊是mysql的設定，其中laravel就是對應到剛剛在phpmyadmin中建立的laravel資料庫
+
+![alt laravel-3](/img/laravel-2.png "laravel-3")
+
+請將DB_USERNAME 及 DB_PASSWORD 更改為自己設定的使用者帳號及密碼
 
 ### 資料庫遷移
 
