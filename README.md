@@ -159,7 +159,7 @@ public function chart()
     DB::connection('mysql');
 
     // 取值
-    $value = DB::table('laravel')->orderBy('time', 'desc')->limit(1)->value('value');
+    $value = DB::table('laravel')->orderBy('id', 'desc')->limit(1)->value('value');
         
     return view('chart')->with('value',$value);
 }
