@@ -34,7 +34,7 @@ class HomeController extends Controller
         DB::connection('mysql');
 
         // 取值
-        $value = DB::table('chart')->orderBy('time', 'desc')->limit(1)->value('value');
+        $value = DB::table('chart')->orderBy('id', 'desc')->limit(1)->value('value');
         
         return view('chart')->with('value',$value);
     }
