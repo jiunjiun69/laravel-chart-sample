@@ -1,5 +1,5 @@
 # laravel-chart-sample
-利用laravel，透過[Server Sent Events](https://en.wikipedia.org/wiki/Server-sent_events) 將XAMPP架設的MySQL資料庫中的數據推送到chart顯示的實作過程教學
+利用Laravel透過[Server Sent Events](https://en.wikipedia.org/wiki/Server-sent_events)串接XAMPP資料庫與chartjs圖表的實作過程教學
 
 此專案是依老師要求，要教學弟妹們laravel串接資料庫與圖表的教學，如有錯誤請鞭小力點，有其他問題都歡迎提問或指正，感謝大家
 
@@ -223,7 +223,7 @@ public function chartEventStream()
         'time' => date('Y-m-d H:i:s', $t),
         
         // 取值
-        'value' => DB::table('chart')->orderBy('time', 'desc')->limit(1)->value('value')
+        'value' => DB::table('chart')->orderBy('id', 'desc')->limit(1)->value('value')
     ];
 
     $response = new StreamedResponse();
