@@ -223,7 +223,7 @@ public function chartEventStream()
         'time' => date('Y-m-d H:i:s', $t),
         
         // 取值
-        'value' => DB::table('chart')->orderBy('time', 'desc')->limit(1)->value('value')
+        'value' => DB::table('chart')->orderBy('id', 'desc')->limit(1)->value('value')
     ];
 
     $response = new StreamedResponse();
