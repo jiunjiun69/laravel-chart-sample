@@ -70,7 +70,11 @@ php artisan serve
 ~~介面在resources\views\auth下~~
 
 ~~註冊登入控制器在app\Http\Controllers\Auth下~~
-
+### install node & npm
+```
+brew install node
+npm install && npm run dev
+```
 ## 第三步-資料庫串接與取值
 
 請先開啟XAMPP
