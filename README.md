@@ -74,9 +74,9 @@ php artisan ui vue --auth
 
 ### install node & npm
 
-https://nodejs.org/en/
+先安裝node https://nodejs.org/en/
 
-Please run "npm install && npm run dev" to compile your fresh scaffolding. 再下指令
+前面生成註冊登入頁面會友提示訊息:Please run "npm install && npm run dev" to compile your fresh scaffolding. 所以要再下指令
 
 ```
 npm install && npm run dev
