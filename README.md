@@ -71,8 +71,8 @@ php artisan serve
 
 ~~註冊登入控制器在app\Http\Controllers\Auth下~~
 ### install node & npm
+https://nodejs.org/en/
 ```
-brew install node
 npm install && npm run dev
 ```
 ## 第三步-資料庫串接與取值
