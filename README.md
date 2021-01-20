@@ -59,23 +59,29 @@ php artisan serve
 
 在瀏覽器中輸入http://127.0.0.1:8000 ，能看到以上畫面代表運行成功
 
-### ~~生成註冊登入頁面~~
+### 生成註冊登入頁面
 
-~~composer require laravel/ui "^2.0"~~
+```
+composer require laravel/ui "^2.0"
+php artisan ui vue --auth
+```
 
-~~php artisan ui vue --auth~~
+這樣就構建好使用者登入註冊介面了
 
-~~這樣就構建好使用者登入註冊介面了~~
+介面在resources\views\auth下
 
-~~介面在resources\views\auth下~~
+註冊登入控制器在app\Http\Controllers\Auth下
 
-~~註冊登入控制器在app\Http\Controllers\Auth下~~
 ### install node & npm
+
 https://nodejs.org/en/
+
 Please run "npm install && npm run dev" to compile your fresh scaffolding. 再下指令
+
 ```
 npm install && npm run dev
 ```
+
 ## 第三步-資料庫串接與取值
 
 請先開啟XAMPP
