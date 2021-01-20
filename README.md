@@ -72,6 +72,7 @@ php artisan serve
 ~~註冊登入控制器在app\Http\Controllers\Auth下~~
 ### install node & npm
 https://nodejs.org/en/
+Please run "npm install && npm run dev" to compile your fresh scaffolding. 再下指令
 ```
 npm install && npm run dev
 ```
